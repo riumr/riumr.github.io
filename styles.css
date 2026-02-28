@@ -1,0 +1,159 @@
+:root {
+  --bg: #f9f4ec;
+  --ink: #101827;
+  --accent: #c53a1e;
+  --accent-soft: #ef7f45;
+  --line: #d4c7b8;
+  --card: #fffefb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 15% 15%, #ffe7cf 0%, transparent 35%),
+    radial-gradient(circle at 85% 10%, #ffd5b8 0%, transparent 30%), var(--bg);
+  min-height: 100vh;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(16, 24, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(16, 24, 39, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 64px 20px 28px;
+  animation: fade-up 700ms ease-out both;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: #394458;
+  margin: 0;
+}
+
+h1 {
+  margin: 8px 0 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.2rem, 10vw, 6.2rem);
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+}
+
+.lead {
+  margin: 0;
+  max-width: 760px;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.profile-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border: 2px solid #8e2b17;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.profile-link:hover {
+  transform: translateY(-2px);
+  background: var(--accent-soft);
+}
+
+.projects {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 8px 20px 56px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: linear-gradient(150deg, var(--card), #f6efe5);
+  border-radius: 16px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  min-height: 220px;
+  animation: fade-up 700ms ease-out both;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1.24rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 0.96rem;
+}
+
+.meta {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #bca992;
+  background: #fff7ed;
+}
+
+.card a {
+  width: fit-content;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 0 20px 42px;
+  color: #4c576b;
+  font-size: 0.86rem;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+}
